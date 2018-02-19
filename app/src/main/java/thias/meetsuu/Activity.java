@@ -8,7 +8,7 @@ class Activity {
     private String description;
     private int theme;
 
-    private Activity(String description, int theme){
+    public Activity(String description, int theme){
         if(description!=null) {
             this.description = description;
         }else{

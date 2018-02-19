@@ -1,14 +1,15 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_view"
+    android:id="@+id/cv"
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:layout_margin="8dp">
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/thumbnail"
+            android:id="@+id/pic"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
@@ -16,10 +17,10 @@
             android:src="@drawable/fallout" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/thumbnail"
+            android:layout_below="@+id/pic"
             android:maxLines="3"
             android:padding="8dp"
             android:text="@string/title"
@@ -28,9 +29,10 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/theme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
+            android:layout_below="@+id/desc"
             android:maxLines="3"
             android:padding="8dp"
             android:text="@string/description"
