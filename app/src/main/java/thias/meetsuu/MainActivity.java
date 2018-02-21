@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeData(){
         activityList = new ArrayList<>();
-        activityList.add(new Activity("This a description", 2));
+        activityList.add(new Activity("This Is a Title","This is a description", 2));
+        activityList.add(new Activity("This Is also a Title","This is also a description", 2));
     }
 
     private void initializeAdapter(){

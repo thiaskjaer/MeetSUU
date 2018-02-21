@@ -17,20 +17,26 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     private ArrayList<Activity> activityList;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView description, theme;
+        private TextView title, description, theme;
         CardView cv;
 
         private ViewHolder(View view) {
             super(view);
             cv = itemView.findViewById(R.id.cv);
+            title = view.findViewById(R.id.title);
             description = view.findViewById(R.id.desc);
             theme = view.findViewById(R.id.theme);
         }
     }
 
 
-    public RecycleAdapter(ArrayList<Activity> ActivityList) {
-        this.activityList = ActivityList;
+    public RecycleAdapter(ArrayList<Activity> activityList) {
+        this.activityList = activityList;
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 
     @Override
@@ -45,14 +51,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Activity activity = activityList.get(position);
-        //holder.description.setText(activity.getDescription());
+        holder.title.setText(activity.getTitle());
+        holder.description.setText(activity.getDescription());
         //holder.theme.setText(activity.getTheme());
         //holder.image.setImage(activity.getImage());
     }
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-    }
+
 
     @Override
     public int getItemCount() {

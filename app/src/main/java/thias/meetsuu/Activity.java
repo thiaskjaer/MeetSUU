@@ -5,15 +5,32 @@ package thias.meetsuu;
  */
 
 class Activity {
+    private String title;
     private String description;
     private int theme;
 
-    public Activity(String description, int theme){
+    public Activity(String title, String description, int theme){
+        if(title!=null) {
+            this.title = title;
+        }else{
+            this.title="No Title";
+        }
+
         if(description!=null) {
             this.description = description;
         }else{
             this.description="No description was given";
         }
+
+        this.theme = theme;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -31,4 +48,5 @@ class Activity {
     public void setTheme(int theme) {
         this.theme = theme;
     }
+
 }

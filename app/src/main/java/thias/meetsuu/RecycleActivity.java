@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class RecycleActivity extends AppCompatActivity {
+    TextView title;
     TextView description;
     TextView theme;
 
