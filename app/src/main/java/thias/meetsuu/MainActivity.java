@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeData(){
         activityList = new ArrayList<>();
-        activityList.add(new Activity("This Is a Title","This is a description", 2));
-        activityList.add(new Activity("This Is also a Title","This is also a description", 2));
+        activityList.add(new Activity("Anyone wanna play soccer?","If anyone is down for some soccer, we can play on school's field. I'm thinking 4v4 or 2v2", 2));
+        activityList.add(new Activity("Settles of Catan","Let's play some Settlers!", 2));
     }
 
     private void initializeAdapter(){
