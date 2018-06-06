@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView title, description, theme;
         CardView cv;
+        private ImageView pic;
 
         private ViewHolder(View view) {
             super(view);
@@ -26,6 +28,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
             title = view.findViewById(R.id.title);
             description = view.findViewById(R.id.desc);
             theme = view.findViewById(R.id.theme);
+            pic = view.findViewById(R.id.pic);
         }
     }
 
@@ -51,10 +54,17 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Activity activity = activityList.get(position);
+
         holder.title.setText(activity.getTitle());
+
         holder.description.setText(activity.getDescription());
+
+        if(activity.getTheme().equals("snow")){
+            holder.pic.setImageResource(R.drawable.snow);
+        } else{
+            holder.pic.setImageResource(R.drawable.soccer);
+        }
         //holder.theme.setText(activity.getTheme());
-        //holder.image.setImage(activity.getImage());
     }
 
 

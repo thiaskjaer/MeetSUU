@@ -7,9 +7,9 @@ package thias.meetsuu;
 class Activity {
     private String title;
     private String description;
-    private int theme;
+    private String theme;
 
-    public Activity(String title, String description, int theme){
+    public Activity(String title, String description, String theme){
         if(title!=null) {
             this.title = title;
         }else{
@@ -41,11 +41,11 @@ class Activity {
         this.description = description;
     }
 
-    public int getTheme() {
+    public String getTheme() {
         return theme;
     }
 
-    public void setTheme(int theme) {
+    public void setTheme(String theme) {
         this.theme = theme;
     }
 
