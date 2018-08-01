@@ -2,4 +2,9 @@
     <string name="app_name">Meet@SUU</string>
     <string name="title">Meet@SUU</string>
     <string name="description">Rigtig flot, rigtig godt</string>
+    <string-array name="themes">
+        <item>snow</item>
+        <item>soccer</item>
+    </string-array>
+
 </resources>
