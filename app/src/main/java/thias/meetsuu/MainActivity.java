@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeData(){
         //activityList = new ArrayList<>();
         activityList.add(new Activity("Anyone wanna play soccer?","If anyone is down for some soccer, we can play on the school's field. I'm thinking 4v4 or 2v2", "sport"));
-        activityList.add(new Activity("Settlers of Catan","Let's play some Settlers!", "sport"));
+        activityList.add(new Activity("Settlers of Catan","Let's play some Settlers!", "snow"));
     }
 
     private void addCard(){
