@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RecycleActivity" />
-        <activity android:name=".EditPostActivity"></activity>
+        <activity android:name=".EditPostActivity"
+                  android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
