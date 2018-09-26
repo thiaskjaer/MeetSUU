@@ -2,6 +2,7 @@ package thias.meetsuu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,6 +21,18 @@ public class EditPostActivity extends AppCompatActivity {
         descField = findViewById(R.id.descField);
         themeField = findViewById(R.id.themeField);
         postButton = findViewById(R.id.postButton);
+        postButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SendPost();
+            }
+        });
+    }
+
+    private void SendPost(){
+        Activity act = new Activity(titleField.getText().toString(),descField.getText().toString(), themeField.getSelectedItem().toString());
+
+
     }
 
 }
