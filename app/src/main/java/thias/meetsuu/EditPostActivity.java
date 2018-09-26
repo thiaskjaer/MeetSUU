@@ -1,5 +1,6 @@
 package thias.meetsuu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,9 +31,13 @@ public class EditPostActivity extends AppCompatActivity {
     }
 
     private void SendPost(){
-        Activity act = new Activity(titleField.getText().toString(),descField.getText().toString(), themeField.getSelectedItem().toString());
-
-
+        //Activity act = new Activity(titleField.getText().toString(),descField.getText().toString(), themeField.getSelectedItem().toString());
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("title", titleField.getText().toString());
+        returnIntent.putExtra("description", descField.getText().toString());
+        returnIntent.putExtra("theme", themeField.getSelectedItem().toString());
+        setResult(EditPostActivity.RESULT_OK,returnIntent);
+        finish();
     }
 
 }

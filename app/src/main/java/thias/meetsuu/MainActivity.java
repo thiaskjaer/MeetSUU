@@ -1,6 +1,7 @@
 
 package thias.meetsuu;
 
+        import android.content.Intent;
         import android.support.design.widget.FloatingActionButton;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -52,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
     private void initializeAdapter(){
         RecycleAdapter adapter = new RecycleAdapter(activityList);
         rv.setAdapter(adapter);
+    }
+
+    private void createPost() {
+        Intent pickContactIntent = new Intent(this, EditPostActivity.class);
+        startActivityForResult(pickContactIntent, 1);
     }
 }
