@@ -8,6 +8,7 @@ package thias.meetsuu;
         import android.support.v7.widget.LinearLayoutManager;
         import android.support.v7.widget.RecyclerView;
         import android.view.View;
+        import android.widget.Toast;
 
         import java.util.ArrayList;
 
@@ -29,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setHasFixedSize(true);
         fb.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                addCard();
-                initializeAdapter();
+                createPost();
             }
         });
 
@@ -55,8 +55,28 @@ public class MainActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
     }
 
+    //starts new intent for creating a post
     private void createPost() {
-        Intent pickContactIntent = new Intent(this, EditPostActivity.class);
-        startActivityForResult(pickContactIntent, 1);
+        //initializes intent for EditPostActivity
+        Intent CreatePostIntent = new Intent(this, EditPostActivity.class);
+        //using startActivityForResult for getting an intent with info for new activity
+        startActivityForResult(CreatePostIntent, 1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == 1) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                //add result information to activitylist as an activity
+                activityList.add(new Activity(data.getStringExtra("title"),data.getStringExtra("description"), data.getStringExtra("theme")));
+                //refresh the activities
+                initializeAdapter();
+            }else{
+                //If user cancels (most likely pressing back button) display toast
+                Toast.makeText(getApplicationContext(), "Post cancelled", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
